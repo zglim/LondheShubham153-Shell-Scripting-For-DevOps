@@ -10,6 +10,9 @@ install_package() {
     # sudo apt-get install -y "$1"
 }
 
-greet "jethalal"
-greet "babita"
-install_package "nginx"
+# Run demo calls only when executed directly (not when sourced by another script)
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    greet "jethalal"
+    greet "babita"
+    install_package "nginx"
+fi
